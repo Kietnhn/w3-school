@@ -1,0 +1,24 @@
+
+/* ps */
+@media (min-width : 1024px){
+  
+}
+/* tablet */
+@media (max-width : 1023px) and (min-width : 740px){
+    /* #header{
+        height: 52px;
+
+    }
+    #nav li a{
+        line-height: 52px;
+        padding: 0 32px;
+        font-size: 20px;
+    }
+
+} */
+  
+/* mibile */
+@media (max-width : 739px){
+
+}
+   
