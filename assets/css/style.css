@@ -3,12 +3,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 html{
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
+    font-size: 62.5%;
 } 
 .text-center{
     text-align: center !important;
@@ -24,6 +24,8 @@ html{
 }
 
 .row{
+    display: flex;
+    flex-wrap: wrap;
     margin-left: -8px;
     margin-right: -8px;
 }
@@ -47,7 +49,6 @@ html{
     padding-right: 8px;
 }
 .btn{
-     /* margin-bottom: 16px;  */
     color: #fff;
     background-color: #000;
     padding: 11px 16px; 
@@ -55,24 +56,16 @@ html{
     display: inline-block;
     margin-top: 15px;
     border: none;
-
 }
 .btn:hover{
     background-color: #ccc;
     color: black;
     cursor: pointer;
-    /* border: none; */
 }
-/* 
-1. làm từ ngoài vào trong
-2. làm từ trên xuống */
 
-/* 1. vị trí 
-   2. kích thước(height,weight)
-   3. màu sắc
-   4. kiểu dáng(kiểu chữ..) */
-
-
+#main{
+    overflow: hidden;
+}
 #header{
      height: 46px;
      background-color: black;
@@ -85,19 +78,18 @@ html{
  #nav{
     display: inline-block;
  }
- #nav > li{
+ .nav-item{
     display: inline-block;
  }
-   #nav li{
-     
+#nav li{
      position: relative;
  }
  #nav > li > a{
     color: #fff;
     text-transform: uppercase;
  }
-   #nav li a{
-    
+#nav li a{
+    font-size: 1.5rem;
     text-decoration: none;
     padding: 0 24px;
     line-height: 46px;
@@ -128,13 +120,14 @@ html{
     line-height: 40px;
 }
 #nav .down-button{
-    font-size: 14px;
+    font-size: 1.4rem;
+}
+.nav-on-mobile{
+    display: none;
 }
 #header .search-but{
     float: right;
     color: #fff;
-    padding: 0 21px;
-    line-height: 47px;
 }
 #header .search-but:hover{
     background-color: #f44336;
@@ -142,24 +135,28 @@ html{
     height: 46px;
     width: 62px;
 
-    
-
 }
-#header .search-but .search-icon{
-  
-    font-size: 24px;
-    line-height: 46px ;
+.search-but .search-icon{
+    font-size: 2.4rem;
+    line-height: 46px;
+    padding: 0 21px;
+}
+.menu-icon {
+    font-size: 2.4rem;
+    padding: 0 21px;
+    display: none;
 }
 /* slider */
 
 #slider {
-    padding-top: 50%;
-    position: relative;
     margin-top: 46px;
-    background-image: url('/assets/img/slider/la.jpg');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+.slider-container{
+    position: relative;
+
+}
+.slider-img{
+    width: 100%;
 }
 #slider .text-content{
     position: absolute;
@@ -170,33 +167,30 @@ html{
 }
 #slider .text-content .text-heading{
     font-weight: 450;
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 #slider .text-content .text-discription{
-    font-size: 15px;
+    font-size: 1.5rem;
     margin-top: 25px;
 }
 /* content */
-#content {
- 
-}
+
 .content-section{
     width: 800px;
     max-width: 100%;
-    padding: 64px 0 112px;
-    margin-left: auto;
-    margin-right: auto;
-    
+    padding: 64px 16px 112px;
+    justify-content: center;
+    margin: 0 auto;
 }
 #content .content-section .section-main{
     text-align: center;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 3rem;
     letter-spacing: 3.5px;
 }
 #content .content-section .section-sub{
     text-align: center; 
-    font-size: 15px;
+    font-size: 1.5rem;
     font-style: italic;
     margin-top: 25px;
     color:gray;
@@ -206,16 +200,17 @@ html{
     font-family:sans-serif;
     margin-top: 25px;
     text-align: justify;
-    font-size: 15px;
+    font-size: 1.5rem;
     line-height: 1.5;
 }
 /* member */
 #content .member{
     margin-top: 47px;
+    width: 100%;
 }
 
 #content .member-name{
-    font-size: 15px;
+    font-size: 1.5rem;
     
 }
 #content .member-img{
@@ -237,7 +232,7 @@ html{
 }
 .tickets li{
     color: #757575;
-    font-size: 15px;
+    font-size: 1.5rem;
     padding: 8px 16px;
     border-bottom: 1px solid #ddd;
     list-style-type: none;
@@ -258,20 +253,14 @@ html{
     line-height: 24px;
     text-align: center;
     margin-top: -3px;
-    /* có float nên đặt margin âm */
 }
 /* place */
 
 .place-list{
     margin-top: 32px;
-    /* margin-bottom: 48px; */
-
 }
 .place-item {
-    
     width: calc(100%/3);
-    
-
 }
 .place-item .place-img{
    width: 100%;
@@ -283,10 +272,10 @@ html{
 .place-item .place-content{
     background-color: #fff;
     padding: 16px;
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 .place-item .place-name{
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 .place-item .place-time{
@@ -302,7 +291,7 @@ html{
     margin-top: 48px;
 }
 .contact-info{
-    font-size: 18px;
+    font-size: 1.8rem;
     line-height: 1.4;
 }
 .contact-info i[class*="ti-"]{
@@ -310,7 +299,7 @@ html{
     display: inline-block;
 }
 .contact-form{
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 .contact-form .form-control{
     padding: 10px;
@@ -320,13 +309,14 @@ html{
 /*  */
 .map-section img {
     width: 100%;
+    filter: grayscale(50%);
 }
 #footer {
     padding: 64px 16px;
     text-align: center;
 }
 #footer .socicals{
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 #footer .socicals a{
     text-decoration: none;
@@ -335,7 +325,6 @@ html{
 #footer .socicals a:hover,
 #footer .copyright a:hover{
     color: rgba(0, 0, 0, 0.4);
-
 }
 #footer .copyright{
     color: rgba(0, 0, 0, 0.6);
@@ -343,7 +332,6 @@ html{
 }
 #footer .copyright a{
     color: rgba(0, 0, 0, 0.6);
-
 }
 /* modal */
 .modal.open{
@@ -363,7 +351,7 @@ html{
 .modal .modal-container{
     background: #fff;
     width: 900px;
-    max-width: calc(100%-32px);
+    max-width: calc(100% - 32px);
     min-height: 200px;
     position: relative;
     animation: modalIn ease 0.5s;
@@ -375,7 +363,7 @@ html{
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 30px;
+    font-size: 3rem;
 }
 .modal-heading-icon{
     margin-right: 15px;
@@ -399,26 +387,24 @@ html{
 }
 .modal-label{
     display: block;
-    font-size: 15px;
+    font-size: 1.5rem;
     margin-bottom: 12px;
 }
 .modal-input {
     border: 1px solid #ccc;
-    font-size: 15px;
+    font-size: 1.5rem;
     padding: 10px;
     width: 100%;
     margin-bottom: 24px;
 }
 #buy-tickets{
-    
     background: #009688;
     border: none;
     width: 100%;
     color: #fff;
-    font-size: 15px;
+    font-size: 1.5rem;
     text-transform: uppercase;
     padding: 16px;
-    
 }
 #buy-tickets:hover{
     opacity: 0.8;
@@ -440,8 +426,53 @@ html{
         opacity: 1;
         transform: translateY(0px);
     }
-
 }
-
     
+/* mobile */
+@media screen and (max-width: 46.1875em){
+  
+    .hide-on-mobile{
+        display: none !important;
+    }
+    .nav-item {
+        display: block;
+    }
 
+    .menu-icon {
+        line-height: 46px !important;
+        display: block;
+    }
+    #header.hidden {
+        overflow: hidden;
+    }
+    #nav{
+        width: 100%;
+        background-color: #000;
+    }
+    #header .search-but{
+        transform: translateY(-230px);
+    }
+    .member .col {
+        float: unset;
+        width: 100%;
+    }
+    #content .member-img{
+        width: 60%;
+    }
+    #content .member-name{
+        margin-top: 32px;
+    }
+    .place-item{
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .place-item:last-child{
+        margin-bottom: 0;
+    }
+    .full-width{
+        width: 100% !important;
+    }
+    .contact-info{
+        margin-bottom: 20px;
+    }
+}
